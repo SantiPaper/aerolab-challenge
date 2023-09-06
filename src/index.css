@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  --size-100: 1.2rem;
+  --size-200: 1.4rem;
+  --size-300: 1.6rem;
+  --size-400: 1.8rem;
+  --size-500: 2.4rem;
+  --size-600: 3.2rem;
+  --size-700: 4.8rem;
+  --size-800: 9.6rem;
+  --size-900: 20rem;
+
+  --neutral-900: #252f3d;
+  --neutral-600: #7c899c;
+  --neutral-500: #8fa3bf;
+  --neutral-300: #dae4f2;
+  --neutral-200: #e6edf7;
+  --neutral-100: #f5f9ff;
+  --neutral-0: #ffffff;
+
+  --brand-default: linear-gradient(#176feb, #ff80ff);
+  --brand-hover: linear-gradient(#1667d9, #f279f2);
+  --brand-light-100: #e5f0ff;
+  --brand-light-200: #cce1ff;
+
+  --red-default: #e07f4f;
+  --red-light: #ffdfd9;
+
+  --specials-illustration: linear-gradient(#7296eb, #eac0e9, #eac0e9);
+  --specials-section: linear-gradient(
+    rgba(23, 111, 235, 0.5),
+    rgba(255, 128, 255, 0.5)
+  );
+  --specials-aerolab: linear-gradient(#ff8800, #ff6600);
+
+  font-family: "Montserrat", sans-serif;
+}
