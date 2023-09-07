@@ -27,7 +27,7 @@ body {
   --neutral-100: #f5f9ff;
   --neutral-0: #ffffff;
 
-  --brand-default: linear-gradient(#176feb, #ff80ff);
+  --brand-default: linear-gradient(90deg, #176feb, #ff80ff);
   --brand-hover: linear-gradient(#1667d9, #f279f2);
   --brand-light-100: #e5f0ff;
   --brand-light-200: #cce1ff;

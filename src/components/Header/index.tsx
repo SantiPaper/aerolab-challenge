@@ -1,0 +1,35 @@
+import { Modal } from "../Modal";
+import { StyledContainer } from "../Container/style";
+import { StyledHeader } from "./style";
+import aerolab from "/assets/icons/aerolab-logo-1.svg";
+import aeropay from "/assets/icons/aeropay-1.svg";
+import chevron from "/assets/icons/chevron-default.svg";
+import { useState } from "react";
+
+export const Header = () => {
+  const [showModal, setShowModal] = useState(false);
+  const toggleModal = () => {
+    setShowModal(!showModal);
+  };
+  return (
+    <StyledHeader>
+      <StyledContainer>
+        <img src={aerolab} alt="Aerolab logo" />
+        <div className="container-modal">
+          <button onClick={toggleModal} className="header__button">
+            <img src={aeropay} alt="" />
+            <span className="header__points">10.000</span>
+            <img
+              className={
+                showModal ? "header__chevron-rotate" : "header__chevron"
+              }
+              src={chevron}
+              alt=""
+            />
+          </button>
+          {showModal && <Modal />}
+        </div>
+      </StyledContainer>
+    </StyledHeader>
+  );
+};
