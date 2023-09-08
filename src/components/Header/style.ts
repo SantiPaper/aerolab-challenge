@@ -25,6 +25,7 @@ export const StyledHeader = styled.header`
       font-family: inherit;
       box-shadow: 0 0.2rem 1.2rem rgba(0, 0, 0, 0.08);
     }
+
     &__points {
       background: var(--brand-default);
       background-clip: text;
@@ -34,10 +35,12 @@ export const StyledHeader = styled.header`
       font-weight: 600;
     }
     &__chevron {
+      transition: transform 0.2s;
       transform: rotate(90deg);
     }
     &__chevron-rotate {
-      transform: rotate(-90deg);
+      transition: transform 0.2s;
+      transform: rotate(-450deg);
     }
   }
 `;

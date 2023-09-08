@@ -1,4 +1,26 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const fadeIn = keyframes`
+0%{
+  opacity: 0;
+  transform: translateY(-1.5rem);
+}
+100%{
+  transform: translateY(0);
+  opacity: 1;
+}
+`;
+
+const fadeInSemi = keyframes`
+0%{
+  opacity: 0.5;
+}
+100%{
+  opacity: 1;
+}
+
+
+`;
 
 export const StyledModal = styled.div`
   position: absolute;
@@ -10,6 +32,10 @@ export const StyledModal = styled.div`
   display: flex;
   flex-direction: column;
   box-shadow: 0 0.2rem 1.2rem rgba(0, 0, 0, 0.08);
+  animation: ${fadeIn} 500ms forwards;
+  background-color: var(--neutral-0);
+  z-index: 3;
+
   .modal {
     &__add-balance {
       padding: 0 2.4rem 1.6rem;
@@ -59,6 +85,8 @@ export const StyledModal = styled.div`
       }
       input:checked + label {
         background: var(--brand-default);
+        animation: ${fadeInSemi} 500ms forwards;
+
         span {
           color: var(--neutral-100);
         }
@@ -99,6 +127,16 @@ export const StyledModal = styled.div`
       font-weight: 600;
       font-family: inherit;
       cursor: pointer;
+      transition: 0.25s ease-in-out;
+
+      &:hover {
+        filter: brightness(1.1);
+      }
+      &:active {
+        transition: none;
+        filter: brightness(0.95);
+        transform: scale(0.98) translateY(0.15rem);
+      }
     }
   }
 `;
