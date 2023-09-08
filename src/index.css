@@ -27,6 +27,8 @@ body {
   --neutral-100: #f5f9ff;
   --neutral-0: #ffffff;
 
+  --outline: #ff80ff;
+
   --brand-default: linear-gradient(90deg, #176feb, #ff80ff);
   --brand-hover: linear-gradient(#1667d9, #f279f2);
   --brand-light-100: #e5f0ff;
@@ -35,12 +37,27 @@ body {
   --red-default: #e07f4f;
   --red-light: #ffdfd9;
 
-  --specials-illustration: linear-gradient(#7296eb, #eac0e9, #eac0e9);
+  --specials-illustration: linear-gradient(
+    90deg,
+    rgba(114, 150, 235, 0.5),
+    rgba(234, 192, 233, 0.5),
+    rgba(234, 192, 233, 0.5)
+  );
   --specials-section: linear-gradient(
+    90deg,
     rgba(23, 111, 235, 0.5),
     rgba(255, 128, 255, 0.5)
   );
   --specials-aerolab: linear-gradient(#ff8800, #ff6600);
 
   font-family: "Montserrat", sans-serif;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+input:focus-visible + label {
+  outline: 2px dashed var(--outline);
+  outline-offset: 0.2rem;
 }
