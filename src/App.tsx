@@ -2,8 +2,11 @@ import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
 import { Info } from "./components/Info";
 import { useEffect } from "react";
+import { useProductsContext } from "./hooks/useProductsContext";
 
 function App() {
+  const { setProducts } = useProductsContext();
+
   useEffect(() => {
     fetch("https://coding-challenge-api.aerolab.co/products", {
       headers: {
@@ -13,7 +16,8 @@ function App() {
       },
     })
       .then((data) => data.json())
-      .then((data) => console.log(data));
+      .then((data) => setProducts(data));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
