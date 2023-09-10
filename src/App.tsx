@@ -3,6 +3,7 @@ import { Hero } from "./components/Hero";
 import { Info } from "./components/Info";
 import { useEffect } from "react";
 import { useProductsContext } from "./hooks/useProductsContext";
+import { Catalogo } from "./components/Catalogo";
 
 function App() {
   const { setProducts } = useProductsContext();
@@ -26,6 +27,7 @@ function App() {
       <main>
         <Hero />
         <Info />
+        <Catalogo />
       </main>
     </>
   );

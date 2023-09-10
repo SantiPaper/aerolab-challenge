@@ -24,8 +24,7 @@ export const StyledInfo = styled.section`
     &__background-img {
       background-image: var(--specials-section);
       border: 1px solid var(--neutral-300);
-      border-top-right-radius: 3.2rem;
-      border-top-left-radius: 3.2rem;
+      border-radius: 2rem 2rem 0 0;
     }
 
     &__info {

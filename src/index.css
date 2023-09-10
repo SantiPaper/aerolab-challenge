@@ -53,6 +53,12 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+button,
+input,
+select {
+  font: inherit;
+}
+
 button:focus-visible,
 a:focus-visible,
 input:focus-visible,

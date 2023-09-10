@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const StyledHero = styled.section`
   background-image: url("/assets/illustrations/single-wave-pattern.svg");
-  margin: 10rem 10rem 0;
+  margin: 10rem 0 0;
   padding-bottom: 23rem;
 
   & > div {

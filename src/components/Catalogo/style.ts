@@ -1,3 +1,5 @@
 import styled from "styled-components";
 
-export const StyledCatalogo = styled.section``;
+export const StyledCatalogo = styled.section`
+  margin-top: 10rem;
+`;
