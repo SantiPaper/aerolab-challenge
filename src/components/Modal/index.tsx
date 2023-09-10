@@ -1,3 +1,4 @@
+import { InputRadio } from "../InputRadio";
 import { StyledModal } from "./style";
 import aeropayNeutral from "/assets/icons/aeropay-2.svg";
 import aeropayBrand from "/assets/icons/aeropay-3.svg";
@@ -17,24 +18,9 @@ export const Modal = () => {
         </div>
       </div>
       <div className="modal__points">
-        <div className="modal__input">
-          <input type="radio" id="1000" value="1000" name="points" />
-          <label htmlFor="1000">
-            <span>1000</span>
-          </label>
-        </div>
-        <div className="modal__input">
-          <input type="radio" id="5000" value="5000" name="points" />
-          <label htmlFor="5000">
-            <span>5000</span>
-          </label>
-        </div>
-        <div className="modal__input">
-          <input type="radio" id="7500" value="7500" name="points" />
-          <label htmlFor="7500">
-            <span>7500</span>
-          </label>
-        </div>
+        <InputRadio label={"1000"} />
+        <InputRadio label={"5000"} />
+        <InputRadio label={"7500"} />
       </div>
       <button className="modal__add-points">
         <img src={aeropayBrand} alt="" /> Add points
