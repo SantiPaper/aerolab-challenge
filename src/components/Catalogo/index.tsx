@@ -6,8 +6,8 @@ export const Catalogo = () => {
   return (
     <Container>
       <StyledCatalogo>
-        <h2>
-          Tech <span>products</span>
+        <h2 className="title">
+          Tech <span className="span">products</span>
         </h2>
         <Filters />
       </StyledCatalogo>

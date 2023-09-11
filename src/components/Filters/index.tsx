@@ -31,11 +31,13 @@ export const Filters = () => {
           <InputRadio label="Highest Price" />
         </div>
 
-        <div>
+        <div className="pagination">
           <button>
             <img src={chevron} alt="" />
           </button>
-          <span>Page 1 of 2</span>
+          <span>
+            Page <span className="pagination__span">1 of 2</span>
+          </span>
           <button>
             <img src={chevron} alt="" />
           </button>
