@@ -35,7 +35,7 @@ export const StyledRadio = styled.div`
     font-size: var(--size-400);
     font-weight: 600;
     padding: 1rem 2rem;
-    background-color: var(--neutral-300);
+    background-color: var(--brand-light-100);
     border-radius: 1.2rem;
     display: inline-block;
 
