@@ -6,7 +6,6 @@ import { Pagination } from "../Pagination";
 
 export const Filters = () => {
   const { products } = useProductsContext();
-  console.log(products);
   const set = new Set(products?.map((product) => product.category));
   const categories = Array.from(set).sort((a, b) => a.localeCompare(b));
 
