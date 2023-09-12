@@ -16,11 +16,12 @@ export const Filters = () => {
           <label htmlFor="select">Filter by:</label>
           <select id="select">
             <option value="">All Products</option>
-            {categories.map((category) => (
-              <option key={category} value={category}>
-                {category}
-              </option>
-            ))}
+            {categories &&
+              categories.map((category) => (
+                <option key={category} value={category}>
+                  {category}
+                </option>
+              ))}
           </select>
         </div>
 
