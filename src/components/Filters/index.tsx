@@ -2,7 +2,7 @@ import { Container } from "../Container";
 import { StyledFilters } from "./style";
 import { useProductsContext } from "../../hooks/useProductsContext";
 import { InputRadio } from "../InputRadio";
-import chevron from "/assets/icons/chevron-active.svg";
+import { Pagination } from "../Pagination";
 
 export const Filters = () => {
   const { products } = useProductsContext();
@@ -31,17 +31,7 @@ export const Filters = () => {
           <InputRadio label="Highest Price" />
         </div>
 
-        <div className="pagination">
-          <button>
-            <img src={chevron} alt="" />
-          </button>
-          <span>
-            Page <span className="pagination__span">1 of 2</span>
-          </span>
-          <button>
-            <img src={chevron} alt="" />
-          </button>
-        </div>
+        <Pagination className="pagination" />
       </StyledFilters>
     </Container>
   );
