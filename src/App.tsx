@@ -4,6 +4,9 @@ import { Info } from "./components/Info";
 import { useEffect } from "react";
 import { useProductsContext } from "./hooks/useProductsContext";
 import { Catalogo } from "./components/Catalogo";
+import { Products } from "./components/Products";
+import { FooterProducts } from "./components/FooterProducts";
+import { Footer } from "./components/Footer";
 
 function App() {
   const { setProducts } = useProductsContext();
@@ -28,7 +31,10 @@ function App() {
         <Hero />
         <Info />
         <Catalogo />
+        <Products />
+        <FooterProducts />
       </main>
+      <Footer />
     </>
   );
 }
