@@ -11,17 +11,6 @@ const fadeIn = keyframes`
 }
 `;
 
-const fadeInSemi = keyframes`
-0%{
-  opacity: 0.5;
-}
-100%{
-  opacity: 1;
-}
-
-
-`;
-
 export const StyledModal = styled.div`
   position: absolute;
   right: 0;
@@ -74,43 +63,6 @@ export const StyledModal = styled.div`
       display: flex;
       gap: 0.4rem;
       margin-top: 4rem;
-
-      input {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        opacity: 0;
-      }
-      input:checked + label {
-        background: var(--brand-default);
-        animation: ${fadeInSemi} 500ms forwards;
-
-        span {
-          color: var(--neutral-100);
-        }
-      }
-
-      label {
-        cursor: pointer;
-        font-size: var(--size-400);
-        font-weight: 600;
-        padding: 1rem 2rem;
-        background-color: var(--neutral-300);
-        border-radius: 1.2rem;
-        display: inline-block;
-
-        span {
-          background: var(--brand-default);
-          color: transparent;
-          -webkit-background-clip: text;
-          background-clip: text;
-        }
-      }
-    }
-    &__input {
-      position: relative;
     }
   }
   .button {
