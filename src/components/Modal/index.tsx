@@ -3,8 +3,20 @@ import { InputRadio } from "../InputRadio";
 import { StyledModal } from "./style";
 import aeropayNeutral from "/assets/icons/aeropay-2.svg";
 import aeropayBrand from "/assets/icons/aeropay-3.svg";
+import { useProductsContext } from "../../hooks/useProductsContext";
+import { FormEvent } from "react";
 
 export const Modal = () => {
+  const { addPoints } = useProductsContext();
+
+  const onSubmit = (ev: FormEvent<HTMLFormElement>) => {
+    ev.preventDefault();
+    const formData = new FormData(ev.currentTarget);
+    const selectedPoints = formData.get("points");
+    if (selectedPoints !== null) {
+      addPoints(Number(selectedPoints));
+    }
+  };
   return (
     <StyledModal>
       <h3 className="modal__add-balance">Add balance</h3>
@@ -18,12 +30,12 @@ export const Modal = () => {
           <p>07/23</p>
         </div>
       </div>
-      <div className="modal__points">
-        <InputRadio label={"1000"} />
-        <InputRadio label={"5000"} />
-        <InputRadio label={"7500"} />
-      </div>
-      <Button className="button">
+      <form onSubmit={onSubmit} id="points-form" className="modal__points">
+        <InputRadio name="points" label={"1000"} />
+        <InputRadio name="points" label={"5000"} />
+        <InputRadio name="points" label={"7500"} />
+      </form>
+      <Button form="points-form" className="button">
         <img src={aeropayBrand} alt="" /> Add points
       </Button>
     </StyledModal>
