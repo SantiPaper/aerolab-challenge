@@ -12,4 +12,7 @@ export type Product = {
 export type ContextValue = {
   products: Array<Product>;
   setProducts: React.Dispatch<React.SetStateAction<Array<Product>>>;
+  points: number;
+  addPoints: (points: number) => void;
+  removePoints: (points: number) => void;
 };

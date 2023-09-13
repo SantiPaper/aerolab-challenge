@@ -5,11 +5,23 @@ export const ProductsContext = createContext<ContextValue | null>(null);
 
 export const Provider = ({ children }: PropsWithChildren) => {
   const [products, setProducts] = useState<Array<Product>>([]);
+  const [points, setPoints] = useState(0);
+
+  const addPoints = (newPoints: number) => {
+    setPoints(points + newPoints);
+  };
+
+  const removePoints = (newPoints: number) => {
+    setPoints(points - newPoints);
+  };
   return (
     <ProductsContext.Provider
       value={{
         products,
         setProducts,
+        points,
+        addPoints,
+        removePoints,
       }}
     >
       {children}
