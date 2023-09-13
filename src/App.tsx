@@ -20,7 +20,12 @@ function App() {
       },
     })
       .then((data) => data.json())
-      .then((data) => setProducts(data));
+      .then((data) => {
+        if (Array.isArray(data)) {
+          setProducts(data);
+        } else throw new Error("Error obteniendo los productos");
+      })
+      .catch((error) => console.error(error));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
