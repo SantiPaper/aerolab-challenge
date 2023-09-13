@@ -12,7 +12,9 @@ export const Provider = ({ children }: PropsWithChildren) => {
   };
 
   const removePoints = (newPoints: number) => {
-    setPoints(points - newPoints);
+    if (points >= newPoints) {
+      setPoints(points - newPoints);
+    }
   };
   return (
     <ProductsContext.Provider

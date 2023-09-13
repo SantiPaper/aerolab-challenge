@@ -17,12 +17,18 @@ export const StyledButton = styled.button`
   cursor: pointer;
   transition: 0.25s ease-in-out;
 
-  &:hover {
+  &:hover:not(:disabled) {
     filter: brightness(1.1);
   }
-  &:active {
+  &:active:not(:disabled) {
     transition: none;
     filter: brightness(0.95);
     transform: scale(0.98) translateY(0.15rem);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    background: var(--neutral-200);
+    color: var(--neutral-600);
   }
 `;

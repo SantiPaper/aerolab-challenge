@@ -7,6 +7,7 @@ export const StyledProduct = styled.article`
       border: 1px solid var(--neutral-300);
       padding: 6.4rem 3.4rem;
       border-radius: 1.6rem 1.6rem 0 0;
+      height: 34.8rem;
     }
     &__info {
       border: 1px solid var(--neutral-300);
