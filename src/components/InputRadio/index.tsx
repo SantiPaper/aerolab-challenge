@@ -1,14 +1,14 @@
 import { StyledRadio } from "./style";
+import { InputHTMLAttributes } from "react";
 
 type Props = {
   label: string;
-  className?: string;
-};
+} & InputHTMLAttributes<HTMLInputElement>;
 
-export const InputRadio = ({ label, className }: Props) => {
+export const InputRadio = ({ label, className, ...rest }: Props) => {
   return (
     <StyledRadio className={className}>
-      <input type="radio" id={label} value={label} name="points" />
+      <input type="radio" id={label} value={label} {...rest} />
       <label htmlFor={label}>
         <span>{label}</span>
       </label>

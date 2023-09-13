@@ -18,7 +18,7 @@ export const Product = ({ product }: Props) => {
         <p>{product.category}</p>
       </div>
       <Button className="button">
-        Redeem for <img src={logo} alt="" /> 12.500
+        Redeem for <img src={logo} alt="" /> {product.cost}
       </Button>
     </StyledProduct>
   );
