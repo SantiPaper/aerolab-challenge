@@ -21,7 +21,9 @@ export const Header = () => {
         <div className="container-modal">
           <button onClick={toggleModal} className="header__button">
             <img src={aeropay} alt="" />
-            <span className="header__points">{points}</span>
+            <span className="header__points">
+              {points.toLocaleString("es-ar")}
+            </span>
             <img
               className={
                 showModal ? "header__chevron-rotate" : "header__chevron"
