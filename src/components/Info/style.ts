@@ -43,7 +43,7 @@ export const StyledInfo = styled.section`
         gap: 1.3rem;
 
         img {
-          background-color: var(--neutral-300);
+          background-color: var(--brand-light-100);
           padding: 0.4rem;
           border-radius: 0.8rem;
         }
