@@ -33,4 +33,8 @@ export const StyledProduct = styled.article`
   .button {
     margin-top: 1.6rem;
   }
+
+  .button-pending {
+    opacity: 0.7;
+  }
 `;

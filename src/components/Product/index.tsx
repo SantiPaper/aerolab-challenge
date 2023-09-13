@@ -1,3 +1,4 @@
+import { useState } from "react";
 import type { Product as ProductType } from "../../context/types";
 import { useProductsContext } from "../../hooks/useProductsContext";
 import { Button } from "../Button";
@@ -10,8 +11,22 @@ type Props = {
 };
 
 export const Product = ({ product }: Props) => {
+  const [isPending, setIsPending] = useState(false);
+
   const { removePoints, points } = useProductsContext();
+
   const needMorePoints = points < product.cost;
+
+  const handleClick = () => {
+    if (isPending) return;
+
+    setIsPending(true);
+    setTimeout(() => {
+      removePoints(product.cost);
+      setIsPending(false);
+    }, 2000);
+  };
+
   return (
     <StyledProduct key={product._id}>
       <div className="container__img">
@@ -22,17 +37,18 @@ export const Product = ({ product }: Props) => {
         <p>{product.category}</p>
       </div>
       <Button
-        onClick={() => removePoints(product.cost)}
+        onClick={handleClick}
         disabled={needMorePoints}
-        className="button"
+        className={isPending ? "button-pending button" : "button"}
       >
-        {needMorePoints && (
+        {isPending && "Processing..."}
+        {!isPending && needMorePoints && (
           <>
             You need <img src={logoNeed} alt="" />{" "}
             {(product.cost - points).toLocaleString("es-ar")}
           </>
         )}
-        {!needMorePoints && (
+        {!isPending && !needMorePoints && (
           <>
             Redeem for <img src={logo} alt="" />{" "}
             {product.cost.toLocaleString("es-ar")}
