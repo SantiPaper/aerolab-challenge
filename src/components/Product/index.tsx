@@ -21,8 +21,8 @@ export const Product = ({ product }: Props) => {
     if (isPending) return;
 
     setIsPending(true);
+    removePoints(product.cost);
     setTimeout(() => {
-      removePoints(product.cost);
       setIsPending(false);
     }, 2000);
   };
