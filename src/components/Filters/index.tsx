@@ -3,11 +3,16 @@ import { StyledFilters } from "./style";
 import { useProductsContext } from "../../hooks/useProductsContext";
 import { InputRadio } from "../InputRadio";
 import { Pagination } from "../Pagination";
+import { Sort } from "../../context/types";
+import { ChangeEvent } from "react";
 
 export const Filters = () => {
-  const { products } = useProductsContext();
+  const { products, setSort } = useProductsContext();
   const set = new Set(products?.map((product) => product.category));
   const categories = Array.from(set).sort((a, b) => a.localeCompare(b));
+
+  const sortProducts = (ev: ChangeEvent<HTMLInputElement>) =>
+    setSort(ev.target.value as Sort);
 
   return (
     <Container>
@@ -27,9 +32,24 @@ export const Filters = () => {
 
         <div className="container__sort">
           <p>Sort by:</p>
-          <InputRadio label="Most Recent" />
-          <InputRadio label="Lowest Price" />
-          <InputRadio label="Highest Price" />
+          <InputRadio
+            onChange={sortProducts}
+            name="sort"
+            label="Most Recent"
+            value="most-recent"
+          />
+          <InputRadio
+            onChange={sortProducts}
+            name="sort"
+            value="lowest-price"
+            label="Lowest Price"
+          />
+          <InputRadio
+            onChange={sortProducts}
+            name="sort"
+            value="highest-price"
+            label="Highest Price"
+          />
         </div>
 
         <Pagination className="pagination" />

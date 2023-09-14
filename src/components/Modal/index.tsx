@@ -31,9 +31,9 @@ export const Modal = () => {
         </div>
       </div>
       <form onSubmit={onSubmit} id="points-form" className="modal__points">
-        <InputRadio name="points" label={"1000"} />
-        <InputRadio name="points" label={"5000"} />
-        <InputRadio name="points" label={"7500"} />
+        <InputRadio name="points" value="1000" label={"1000"} />
+        <InputRadio name="points" value="5000" label={"5000"} />
+        <InputRadio name="points" value="7500" label={"7500"} />
       </form>
       <Button form="points-form" className="button">
         <img src={aeropayBrand} alt="" /> Add points

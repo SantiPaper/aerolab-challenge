@@ -8,7 +8,7 @@ type Props = {
 export const InputRadio = ({ label, className, ...rest }: Props) => {
   return (
     <StyledRadio className={className}>
-      <input type="radio" id={label} value={label} {...rest} />
+      <input type="radio" id={label} {...rest} />
       <label htmlFor={label}>
         <span>{label}</span>
       </label>
