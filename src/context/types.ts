@@ -15,4 +15,8 @@ export type ContextValue = {
   points: number;
   addPoints: (points: number) => void;
   removePoints: (points: number) => void;
+  sort: Sort;
+  setSort: React.Dispatch<React.SetStateAction<Sort>>;
 };
+
+export type Sort = "most-recent" | "lowest-price" | "highest-price";
