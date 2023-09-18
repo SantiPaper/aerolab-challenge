@@ -7,6 +7,7 @@ export const StyledInfo = styled.section`
   & > div {
     display: flex;
     justify-content: center;
+    padding: 0;
   }
 
   .card {
@@ -21,9 +22,12 @@ export const StyledInfo = styled.section`
     height: fit-content;
     margin-top: -12.5rem;
 
+    &__background-img {
+    }
+
     &__img {
-      width: 50rem;
-      height: 50rem;
+      width: min(30vw, 50rem);
+      height: min(30vw, 50rem);
     }
 
     &__background-img {
@@ -37,7 +41,7 @@ export const StyledInfo = styled.section`
       flex-direction: column;
       gap: 1.2rem;
       background-color: var(--neutral-0);
-      width: 100%;
+      width: min(30vw, 50rem);
       padding: 16px 24px 24px 24px;
       border: 1px solid var(--neutral-300);
       border-bottom-right-radius: 3.2rem;
@@ -85,7 +89,6 @@ export const StyledInfo = styled.section`
   @media (max-width: 1024px) {
     background-image: var(--specials-section);
     min-height: 65rem;
-
     display: flex;
     margin-top: -20rem;
 
@@ -93,6 +96,7 @@ export const StyledInfo = styled.section`
       gap: 0.8rem;
       min-height: 55rem;
       align-items: flex-end;
+      justify-content: center;
     }
 
     .card {
@@ -100,8 +104,8 @@ export const StyledInfo = styled.section`
       z-index: 4;
 
       &__img {
-        width: 29.9rem;
-        height: 27.5rem;
+        width: min(30vw, 29.9rem);
+        height: min(30vw, 27.5rem);
       }
 
       &__info {

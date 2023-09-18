@@ -16,7 +16,7 @@ export const Hero = () => {
             Here you’ll be able to exchange all of your hard-earned Aeropoints
             and exchange them for cool tech.
           </p>
-          <a className="hero__link" href="#">
+          <a className="hero__link" href="#catalog">
             View all products <img src={arrow} alt="" aria-hidden />
           </a>
         </div>
