@@ -1,4 +1,3 @@
-import { Container } from "../Container";
 import { StyledFilters } from "./style";
 import { useProductsContext } from "../../hooks/useProductsContext";
 import { InputRadio } from "../InputRadio";
