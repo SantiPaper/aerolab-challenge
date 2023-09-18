@@ -4,8 +4,11 @@ import { Container } from "../Container";
 import { Product } from "../Product";
 
 export const Products = () => {
-  const { products, sort } = useProductsContext();
-  const sortedProducts = [...products];
+  const { products, sort, filtered } = useProductsContext();
+
+  const sortedProducts = [...products].filter((prod) =>
+    prod.category.includes(filtered)
+  );
 
   if (sort !== "most-recent") {
     sortedProducts.sort((a, b) => {

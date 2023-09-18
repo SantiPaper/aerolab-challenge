@@ -7,6 +7,7 @@ export const Provider = ({ children }: PropsWithChildren) => {
   const [products, setProducts] = useState<Array<Product>>([]);
   const [points, setPoints] = useState(0);
   const [sort, setSort] = useState<Sort>("most-recent");
+  const [filtered, setFiltered] = useState("");
 
   const addPoints = (newPoints: number) => {
     setPoints(points + newPoints);
@@ -28,6 +29,8 @@ export const Provider = ({ children }: PropsWithChildren) => {
         removePoints,
         sort,
         setSort,
+        filtered,
+        setFiltered,
       }}
     >
       {children}

@@ -6,19 +6,23 @@ import { Sort } from "../../context/types";
 import { ChangeEvent } from "react";
 
 export const Filters = () => {
-  const { products, setSort } = useProductsContext();
+  const { products, setSort, setFiltered } = useProductsContext();
   const set = new Set(products?.map((product) => product.category));
   const categories = Array.from(set).sort((a, b) => a.localeCompare(b));
 
   const sortProducts = (ev: ChangeEvent<HTMLInputElement>) =>
     setSort(ev.target.value as Sort);
 
+  const setFilter = (ev: ChangeEvent<HTMLSelectElement>) => {
+    setFiltered(ev.target.value);
+  };
+
   return (
     <StyledFilters>
       <div className="flex-tablet">
         <div className="container__filters">
           <label htmlFor="select">Filter by:</label>
-          <select id="select">
+          <select onChange={setFilter} id="select">
             <option value="">All Products</option>
             {categories &&
               categories.map((category) => (
