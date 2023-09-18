@@ -21,13 +21,7 @@ export const Hero = () => {
           </a>
         </div>
         <div className="hero-columns">
-          <img
-            className="hero__image"
-            src={heroImg}
-            alt=""
-            width={900}
-            height={800}
-          />
+          <img className="hero__image" src={heroImg} alt="" />
         </div>
       </Container>
     </StyledHero>

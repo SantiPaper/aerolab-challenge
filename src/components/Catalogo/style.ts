@@ -14,4 +14,11 @@ export const StyledCatalogo = styled.section`
   .span {
     color: var(--neutral-900);
   }
+
+  @media (max-width: 1024px) {
+    margin-top: 16rem;
+  }
+  .title {
+    font-size: var(--size-600);
+  }
 `;

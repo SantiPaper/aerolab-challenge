@@ -23,4 +23,13 @@ export const StyledFooter = styled.footer`
     position: absolute;
     right: 0;
   }
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    gap: 2.4rem;
+    .pagination {
+      position: initial;
+      right: 0;
+    }
+  }
 `;

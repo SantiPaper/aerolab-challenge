@@ -33,4 +33,27 @@ export const StyledFilters = styled.div`
   .pagination {
     margin-left: auto;
   }
+  .flex-tablet {
+    display: flex;
+  }
+
+  @media (max-width: 1024px) {
+    align-items: flex-start;
+    .container__filters {
+      border-right: none;
+      padding-right: 0;
+      margin-right: 0;
+      label {
+        display: none;
+      }
+    }
+    .flex-tablet {
+      display: flex;
+      flex-direction: column;
+      gap: 2.4rem;
+    }
+    p {
+      display: none;
+    }
+  }
 `;

@@ -18,7 +18,7 @@ export const StyledPagination = styled.div`
   button {
     background-color: var(--brand-light-100);
     border: none;
-    padding: 0.8rem;
+    padding: 0.4rem;
     border-radius: 0.8rem;
     display: flex;
     cursor: pointer;

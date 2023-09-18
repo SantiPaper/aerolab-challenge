@@ -2,6 +2,7 @@ import { Modal } from "../Modal";
 import { StyledContainer } from "../Container/style";
 import { StyledHeader } from "./style";
 import aerolab from "/assets/icons/aerolab-logo-1.svg";
+import aerolab2 from "/assets/icons/aerolab-logo-2.svg";
 import aeropay from "/assets/icons/aeropay-1.svg";
 import chevron from "/assets/icons/chevron-default.svg";
 import { useState } from "react";
@@ -17,7 +18,10 @@ export const Header = () => {
   return (
     <StyledHeader>
       <StyledContainer>
-        <img src={aerolab} alt="Aerolab logo" />
+        <picture>
+          <source srcSet={aerolab} media="(min-width: 1025px)" />
+          <img src={aerolab2} alt="Aerolab logo" />
+        </picture>
         <div className="container-modal">
           <button onClick={toggleModal} className="header__button">
             <img src={aeropay} alt="" />

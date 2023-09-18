@@ -13,7 +13,7 @@ export const Info = () => {
       <Container>
         <article className="card">
           <div className="card__background-img">
-            <img src={img1} alt="" width={500} height={500} />
+            <img src={img1} alt="" className="card__img" />
           </div>
           <div className="card__info">
             <div>
@@ -27,7 +27,7 @@ export const Info = () => {
         </article>
         <article className="card">
           <div className="card__background-img">
-            <img src={img2} alt="" width={500} height={500} />
+            <img src={img2} alt="" className="card__img" />
           </div>
           <div className="card__info">
             <div>
@@ -35,13 +35,13 @@ export const Info = () => {
               <h3 className="card__title">2—choose</h3>
             </div>
             <p className="card__description">
-              Browse our tech catalog with more than 20 top tech products
+              Exchange your hard-earned AeroPoints for a cool tech item
             </p>
           </div>
         </article>
         <article className="card">
           <div className="card__background-img">
-            <img src={img3} alt="" width={500} height={500} />
+            <img src={img3} alt="" className="card__img" />
           </div>
           <div className="card__info">
             <div>
@@ -49,7 +49,7 @@ export const Info = () => {
               <h3 className="card__title">3—enjoy!</h3>
             </div>
             <p className="card__description">
-              Browse our tech catalog with more than 20 top tech products
+              All done We’ll take care of delivery of your tech item!
             </p>
           </div>
         </article>

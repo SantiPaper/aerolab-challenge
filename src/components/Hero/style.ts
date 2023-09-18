@@ -77,6 +77,8 @@ export const StyledHero = styled.section`
       transform: translateX(-50%);
       bottom: 0;
       pointer-events: none;
+      width: 90rem;
+      height: 80rem;
     }
   }
   .hero-columns:last-child {
@@ -84,5 +86,55 @@ export const StyledHero = styled.section`
     border-radius: 10rem;
     height: 60rem;
     position: relative;
+  }
+
+  @media (max-width: 1024px) {
+    padding-bottom: 0;
+    & > div {
+      flex-direction: column;
+      align-items: center;
+    }
+    .hero-columns {
+      width: auto;
+      align-items: center;
+      text-align: center;
+    }
+    .hero {
+      &__span {
+        font-size: var(--size-300);
+      }
+
+      &__title {
+        margin-top: 0.8rem;
+        font-size: var(--size-800);
+        max-width: 5ch;
+      }
+      &__title-span {
+        color: var(--neutral-900);
+      }
+
+      &__description {
+        font-size: var(--size-300);
+        max-width: 30ch;
+      }
+
+      &__link {
+        margin-top: 4rem;
+      }
+      &__image {
+        position: initial;
+        left: 0%;
+        transform: translateX(-0%);
+        bottom: 0;
+        pointer-events: none;
+        width: 58rem;
+        height: 51.8rem;
+        z-index: 3;
+      }
+    }
+    .hero-columns:last-child {
+      background: none;
+      height: fit-content;
+    }
   }
 `;
