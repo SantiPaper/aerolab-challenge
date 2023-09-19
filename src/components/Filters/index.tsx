@@ -2,27 +2,43 @@ import { StyledFilters } from "./style";
 import { useProductsContext } from "../../hooks/useProductsContext";
 import { InputRadio } from "../InputRadio";
 import { Pagination } from "../Pagination";
-import { Sort } from "../../context/types";
+import type { Product, Sort } from "../../context/types";
 import { ChangeEvent } from "react";
 
-export const Filters = () => {
-  const { products, setSort, setFiltered } = useProductsContext();
+type Props = {
+  setFilter: (value: string) => void;
+  setSort: React.Dispatch<React.SetStateAction<Sort>>;
+  goToNextPage: () => void;
+  goToPrevPage: () => void;
+  currentPage: number;
+  itemsPerPage: number;
+  sortedProducts: Array<Product>;
+  sort: Sort;
+};
+
+export const Filters = ({
+  sort,
+  setSort,
+  setFilter,
+  goToNextPage,
+  goToPrevPage,
+  currentPage,
+  itemsPerPage,
+  sortedProducts,
+}: Props) => {
+  const { products } = useProductsContext();
   const set = new Set(products?.map((product) => product.category));
   const categories = Array.from(set).sort((a, b) => a.localeCompare(b));
 
   const sortProducts = (ev: ChangeEvent<HTMLInputElement>) =>
     setSort(ev.target.value as Sort);
 
-  const setFilter = (ev: ChangeEvent<HTMLSelectElement>) => {
-    setFiltered(ev.target.value);
-  };
-
   return (
     <StyledFilters>
       <div className="flex-tablet">
         <div className="container__filters">
           <label htmlFor="select">Filter by:</label>
-          <select onChange={setFilter} id="select">
+          <select onChange={(ev) => setFilter(ev.target.value)} id="select">
             <option value="">All Products</option>
             {categories &&
               categories.map((category) => (
@@ -40,23 +56,33 @@ export const Filters = () => {
             name="sort"
             label="Most Recent"
             value="most-recent"
+            checked={sort === "most-recent"}
           />
           <InputRadio
             onChange={sortProducts}
             name="sort"
             value="lowest-price"
             label="Lowest Price"
+            checked={sort === "lowest-price"}
           />
           <InputRadio
             onChange={sortProducts}
             name="sort"
             value="highest-price"
             label="Highest Price"
+            checked={sort === "highest-price"}
           />
         </div>
       </div>
 
-      <Pagination className="pagination" />
+      <Pagination
+        goToNextPage={goToNextPage}
+        goToPrevPage={goToPrevPage}
+        currentPage={currentPage}
+        itemsPerPage={itemsPerPage}
+        sortedProducts={sortedProducts}
+        className="pagination"
+      />
     </StyledFilters>
   );
 };
