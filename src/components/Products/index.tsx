@@ -1,28 +1,17 @@
 import { StyledProducts } from "./stlye";
-import { useProductsContext } from "../../hooks/useProductsContext";
-import { Container } from "../Container";
 import { Product } from "../Product";
+import type { Product as ProductType } from "../../context/types";
 
-export const Products = () => {
-  const { products, sort, filtered } = useProductsContext();
+type Props = {
+  products: Array<ProductType>;
+};
 
-  const sortedProducts = [...products].filter((prod) =>
-    prod.category.includes(filtered)
-  );
-
-  if (sort !== "most-recent") {
-    sortedProducts.sort((a, b) => {
-      return sort === "highest-price" ? b.cost - a.cost : a.cost - b.cost;
-    });
-  }
-
+export const Products = ({ products }: Props) => {
   return (
-    <Container>
-      <StyledProducts>
-        {sortedProducts.map((product) => (
-          <Product key={product._id} product={product} />
-        ))}
-      </StyledProducts>
-    </Container>
+    <StyledProducts>
+      {products.map((product) => (
+        <Product key={product._id} product={product} />
+      ))}
+    </StyledProducts>
   );
 };
