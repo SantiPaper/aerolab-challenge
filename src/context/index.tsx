@@ -1,13 +1,11 @@
 import { createContext, useState, PropsWithChildren } from "react";
-import type { ContextValue, Product, Sort } from "./types";
+import type { ContextValue, Product } from "./types";
 
 export const ProductsContext = createContext<ContextValue | null>(null);
 
 export const Provider = ({ children }: PropsWithChildren) => {
   const [products, setProducts] = useState<Array<Product>>([]);
   const [points, setPoints] = useState(0);
-  const [sort, setSort] = useState<Sort>("most-recent");
-  const [filtered, setFiltered] = useState("");
 
   const addPoints = (newPoints: number) => {
     setPoints(points + newPoints);
@@ -27,10 +25,6 @@ export const Provider = ({ children }: PropsWithChildren) => {
         points,
         addPoints,
         removePoints,
-        sort,
-        setSort,
-        filtered,
-        setFiltered,
       }}
     >
       {children}
