@@ -137,4 +137,11 @@ export const StyledHero = styled.section`
       height: fit-content;
     }
   }
+  @media (max-width: 800px) {
+    .hero-columns:last-child {
+      background: none;
+      height: fit-content;
+      margin-bottom: -20rem;
+    }
+  }
 `;

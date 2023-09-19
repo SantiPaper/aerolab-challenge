@@ -140,9 +140,34 @@ export const StyledInfo = styled.section`
         transform: none;
         margin-left: 0;
         margin-top: 0;
+        min-height: 48rem;
       }
       &__img:last-of-type {
         height: 29.9rem;
+      }
+    }
+  }
+  @media (max-width: 800px) {
+    max-height: none;
+    padding-top: 35rem;
+    padding-bottom: 3.2rem;
+    & > div {
+      gap: 2.4rem;
+      height: fit-content;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: center;
+    }
+    .card {
+      margin-top: 0;
+      z-index: 4;
+
+      &__img {
+        width: 29.9rem;
+        height: 27.5rem;
+      }
+      &__info {
+        width: fit-content;
       }
     }
   }

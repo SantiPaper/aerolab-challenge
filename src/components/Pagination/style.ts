@@ -30,6 +30,11 @@ export const StyledPagination = styled.div`
       filter: brightness(1);
       transition: none;
     }
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+      pointer-events: none;
+    }
   }
   .pagination__span {
     background-image: var(--brand-default);
