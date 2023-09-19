@@ -58,9 +58,9 @@ export const StyledFilters = styled.div`
   }
   @media (max-width: 800px) {
     flex-direction: column;
-  }
-  .pagination {
-    margin-left: 0;
-    margin-top: 2rem;
+    .pagination {
+      margin-left: 0;
+      margin-top: 2rem;
+    }
   }
 `;
