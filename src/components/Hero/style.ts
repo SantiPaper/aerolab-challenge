@@ -143,5 +143,10 @@ export const StyledHero = styled.section`
       height: fit-content;
       margin-bottom: -20rem;
     }
+    .hero__image {
+      width: 37.5rem;
+      height: 36.8rem;
+      z-index: 3;
+    }
   }
 `;
