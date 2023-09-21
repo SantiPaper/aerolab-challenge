@@ -38,6 +38,9 @@ body {
   --red-default: #e07f4f;
   --red-light: #ffdfd9;
 
+  --green-default: #29cc74;
+  --green-light: #ccffe3;
+
   --specials-illustration: linear-gradient(
     90deg,
     rgba(114, 150, 235, 0.5),
