@@ -5,12 +5,14 @@ import { Button } from "../Button";
 import { StyledProduct } from "./style";
 import logo from "/assets/icons/aeropay-3.svg";
 import logoNeed from "/assets/icons/aeropay-4.svg";
+import type { Notification } from "../ContainerNotification";
 
 type Props = {
   product: ProductType;
+  addNotification: (notification: Omit<Notification, "id">) => void;
 };
 
-export const Product = ({ product }: Props) => {
+export const Product = ({ product, addNotification }: Props) => {
   const [isPending, setIsPending] = useState(false);
 
   const { removePoints, points } = useProductsContext();
@@ -22,8 +24,13 @@ export const Product = ({ product }: Props) => {
 
     setIsPending(true);
     removePoints(product.cost);
+
     setTimeout(() => {
       setIsPending(false);
+      addNotification({
+        name: product.name,
+        status: "success",
+      });
     }, 2000);
   };
 
