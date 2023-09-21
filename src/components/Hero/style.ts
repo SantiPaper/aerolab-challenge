@@ -88,6 +88,48 @@ export const StyledHero = styled.section`
     position: relative;
   }
 
+  @media (max-width: 1444px) {
+    .hero-columns {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .hero {
+      &__title {
+        background-image: var(--brand-default);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        font-size: 15rem;
+        text-transform: uppercase;
+        line-height: 0.8;
+        margin-top: 0.8rem;
+        margin-bottom: 2.4rem;
+      }
+
+      &__image {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-bottom: 5rem;
+        bottom: 0;
+        pointer-events: none;
+        width: min(70vh, 90rem);
+        height: min(70vh, 80rem);
+      }
+    }
+    .hero-columns:last-child {
+      background-image: var(--specials-section);
+      border-radius: 10rem;
+      height: 60rem;
+      position: relative;
+      width: 50%;
+    }
+  }
+
   @media (max-width: 1024px) {
     padding-bottom: 0;
     & > div {

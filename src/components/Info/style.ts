@@ -91,24 +91,29 @@ export const StyledInfo = styled.section`
     min-height: 65rem;
     display: flex;
     margin-top: -20rem;
+    padding: 0 2rem;
 
     & > div {
       gap: 0.8rem;
       min-height: 55rem;
       align-items: flex-end;
       justify-content: center;
+      max-width: 100%;
     }
 
     .card {
       margin-top: 0;
       z-index: 4;
+      padding: 1rem;
 
       &__img {
-        width: min(30vw, 29.9rem);
-        height: min(30vw, 27.5rem);
+        width: min(29vw, 29.9rem);
+        height: min(29vw, 27.5rem);
       }
 
       &__info {
+        width: min(29vw, 45rem);
+
         & > div {
           display: flex;
           gap: 1.3rem;
@@ -140,7 +145,7 @@ export const StyledInfo = styled.section`
         transform: none;
         margin-left: 0;
         margin-top: 0;
-        min-height: 48rem;
+        min-height: 47.3rem;
       }
       &__img:last-of-type {
         height: 29.9rem;
