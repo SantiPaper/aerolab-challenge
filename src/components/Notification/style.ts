@@ -1,4 +1,16 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const fadeIn = keyframes`
+0%{
+  opacity: 0;
+  transform: translateX(-50%);
+}
+100%{
+  opacity: 1;
+  transform: translateX(0);
+
+}
+`;
 
 export const StyledNotification = styled.div`
   display: flex;
@@ -8,7 +20,7 @@ export const StyledNotification = styled.div`
   border-radius: 1.2rem;
   align-items: center;
   background-color: var(--neutral-0);
-
+  animation: ${fadeIn} 500ms forwards;
   &.success {
     border-color: var(--green-default);
   }
