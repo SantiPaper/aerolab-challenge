@@ -24,4 +24,4 @@ Una vez clonado, abrir el directorio raiz ejecutar `npm install` y una vez que t
 
 ## 🧱 ¿Que tecnologías se usaron?
 
-React - TypeScript, Styled-components y vitest con react testing library.
+React - TypeScript, Styled-components.
